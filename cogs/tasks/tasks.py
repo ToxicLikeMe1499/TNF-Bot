@@ -160,7 +160,6 @@ class ss(commands.Cog):
                 url=state[2]
             )
             await self.bot.change_presence(activity=activity)
-            os.system(f"title {state[1]} ‖ {state[2]}")
 
         elif state.startswith("w|"):
             state = state.split("|")
@@ -169,7 +168,6 @@ class ss(commands.Cog):
                 name=state[1]
             )
             await self.bot.change_presence(activity=activity)
-            os.system(f"title {state[1]}")
 
 def setup(bot):
     bot.add_cog(ss(bot))
