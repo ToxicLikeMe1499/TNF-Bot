@@ -29,7 +29,6 @@ def loading_animation():
     print(" " * 25, end="\r", flush=True)
     print(F.y + S.D + "[" + get_time() + "] " + F.g + S.B + "[SUCCESSFULLY]" + F.R_ALL + " MySQL Verbunden")
 
-os.system("title " + "Starting Bot")
 os.system("cls")
 print("--------------------------------------------------------------------------------------------------------------")
 print(F.b + S.D + logo.logo + F.R_ALL)
@@ -161,9 +160,6 @@ async def on_ready():
     print(" ")
     print("--------------------------------------------------------------------------------------------------------------")
     #await bot.sync_application_commands(guild_id=1180167998342975578)
-
-    if args.alternate_server:
-        os.system("c:\\Users\\Thoma\\Downloads\\nircmd\\nircmd monitor off")
 
 environ()
 bot.run(os.environ["TOKEN"])
