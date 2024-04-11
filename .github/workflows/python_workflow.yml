@@ -1,4 +1,4 @@
-name: Python Workflow
+name: Python Workflow with GitHub Pages
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main  # Change this to the branch you want to trigger the workflow on
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,3 +25,14 @@ jobs:
 
     - name: Run main.py
       run: python main.py
+
+    # If your project generates static files (e.g., HTML, CSS, JS) for GitHub Pages, 
+    # you need to build them before deploying
+    # - name: Build static files
+    #   run: <command to build static files>
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./  # Change this to the directory where your static files are located
